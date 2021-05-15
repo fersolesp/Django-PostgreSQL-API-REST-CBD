@@ -1,0 +1,203 @@
+### Para usar este archivo para realizar pruebas de peticiones a la API,
+### se necesita tener instalada la extensión REST Client del IDE Visual Studio Code
+
+################### Marcas ###################
+GET http://127.0.0.1:8000/apiDjangoBase/marca/
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/marca/6860
+###
+POST http://127.0.0.1:8000/apiDjangoBase/marca/
+content-type: application/json
+
+{"nombre": "Ejemplo", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/marca/6924/
+content-type: application/json
+
+{"nombre": "EjemploModificado", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/marca/6924/
+
+
+################### Combustibles ###################
+GET http://127.0.0.1:8000/apiDjangoBase/combustible/
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/combustible/1
+###
+POST http://127.0.0.1:8000/apiDjangoBase/combustible/
+content-type: application/json
+
+{"nombre": "Energía alternativa"}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/combustible/8/
+content-type: application/json
+
+{"nombre": "Energía más alternativa"}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/combustible/8/
+
+################### Cajas de cambio ###################
+GET http://127.0.0.1:8000/apiDjangoBase/cajaCambios/
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/cajaCambios/1
+###
+POST http://127.0.0.1:8000/apiDjangoBase/cajaCambios/
+content-type: application/json
+
+{"nombre": "Nueva caja robotizada"}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/cajaCambios/4/
+content-type: application/json
+
+{"nombre": "Nueva caja robotizada mejorada"}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/cajaCambios/5/
+
+################### Tipos de tracción ###################
+GET http://127.0.0.1:8000/apiDjangoBase/traccion/
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/traccion/46
+###
+POST http://127.0.0.1:8000/apiDjangoBase/traccion/
+content-type: application/json
+
+{"nombre": "Tracción a las 6 ruedas"}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/traccion/49/
+content-type: application/json
+
+{"nombre": "Tracción a las 8 ruedas"}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/traccion/49/
+
+################### Modelos ###################
+GET http://127.0.0.1:8000/apiDjangoBase/modelo/
+Max-Objects: 50
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/modelo/2524
+###
+POST http://127.0.0.1:8000/apiDjangoBase/modelo/
+content-type: application/json
+
+{"nombre": "Cañonero",
+"precio": "20.000€",
+"longitud": "4,67m",
+"potencia": "150cv",
+"marca": 6920,
+"combustibles": [1,2],
+"cajas_cambios": [1],
+"tracciones": [46]}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/modelo/2928/
+content-type: application/json
+
+{"nombre": "Cañonero Long Wheel Base",
+"precio": "22.000€",
+"longitud": "4,67m",
+"potencia": "150cv",
+"marca": 6920,
+"combustibles": [1,2,3],
+"cajas_cambios": [1],
+"tracciones": [46]}
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/modelo/2912/
+
+################### Artículos ###################
+GET http://127.0.0.1:8000/apiDjangoBase/articulo/
+Max-Objects: 50
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/articulo/965
+###
+POST http://127.0.0.1:8000/apiDjangoBase/articulo/
+content-type: application/json
+
+{
+"titulo": "Nuevo artículo",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"fecha": "2020-05-07",
+"contenido": "Conetenido del nuevo artículo",
+"autor": "Autor del nuevo artículo",
+"modelo": 2524
+}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/articulo/965/
+content-type: application/json
+
+{
+"titulo": "Nuevo artículo modificado",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"fecha": "2020-05-08",
+"contenido": "Conetenido del nuevo artículo modificado",
+"autor": "Autor del nuevo artículo modificado",
+"modelo": 2525
+}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/articulo/965/
+
+################### Tipos de vehículo ###################
+GET http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/87
+###
+POST http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/
+content-type: application/json
+
+{"nombre": "Camioneta"}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/97/
+content-type: application/json
+
+{"nombre": "Camioneta descapotable"}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/97/
+
+################### Versiones ###################
+GET http://127.0.0.1:8000/apiDjangoBase/version/
+Max-Objects: 50
+
+###
+GET http://127.0.0.1:8000/apiDjangoBase/version/4316
+###
+POST http://127.0.0.1:8000/apiDjangoBase/version/
+content-type: application/json
+
+{
+"nombre": "Nueva versión",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"tipo_vehiculo": 88,
+"modelo": 2524
+}
+
+###
+PUT http://127.0.0.1:8000/apiDjangoBase/version/5077/
+content-type: application/json
+
+{
+"nombre": "Nueva versión modificada",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"tipo_vehiculo": 89,
+"modelo": 2525
+}
+
+###
+DELETE http://127.0.0.1:8000/apiDjangoBase/version/5077/
