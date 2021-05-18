@@ -6,4 +6,6 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from .viewsApiDjangoBase import *
+from .viewsApiDjangoRestFramework import *
+
 

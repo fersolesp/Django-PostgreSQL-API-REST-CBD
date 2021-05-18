@@ -2,101 +2,102 @@
 ### se necesita tener instalada la extensión REST Client del IDE Visual Studio Code
 
 ################### Marcas ###################
-GET http://127.0.0.1:8000/apiDjangoBase/marca/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/marca/
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/marca/6860
+GET http://127.0.0.1:8000/apiDjangoRestFramework/marca/6860
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/marca/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/marca/
 content-type: application/json
 
-{"nombre": "Ejemplo", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
+{"nombre": "Ejemplo2", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/marca/6924/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/marca/6924/
 content-type: application/json
 
 {"nombre": "EjemploModificado", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/marca/6924/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/marca/6926/
 
 ####################################################
 ################### Combustibles ###################
 ####################################################
-GET http://127.0.0.1:8000/apiDjangoBase/combustible/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/combustible/
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/combustible/1
+GET http://127.0.0.1:8000/apiDjangoRestFramework/combustible/1
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/combustible/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/combustible/
 content-type: application/json
 
 {"nombre": "Energía alternativa"}
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/combustible/8/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/combustible/8/
 content-type: application/json
 
 {"nombre": "Energía más alternativa"}
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/combustible/8/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/combustible/8/
 
 #######################################################
 ################### Cajas de cambio ###################
 #######################################################
-GET http://127.0.0.1:8000/apiDjangoBase/cajaCambios/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/cajaCambios/1
+GET http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/1
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/cajaCambios/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/
 content-type: application/json
 
 {"nombre": "Nueva caja robotizada"}
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/cajaCambios/4/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/4/
 content-type: application/json
 
 {"nombre": "Nueva caja robotizada mejorada"}
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/cajaCambios/5/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/5/
 
 #########################################################
 ################### Tipos de tracción ###################
 #########################################################
-GET http://127.0.0.1:8000/apiDjangoBase/traccion/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/traccion/
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/traccion/46
+GET http://127.0.0.1:8000/apiDjangoRestFramework/traccion/46
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/traccion/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/traccion/
 content-type: application/json
 
 {"nombre": "Tracción a las 6 ruedas"}
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/traccion/49/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/traccion/49/
 content-type: application/json
 
 {"nombre": "Tracción a las 8 ruedas"}
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/traccion/49/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/traccion/49/
+
 
 ###############################################
 ################### Modelos ###################
 ###############################################
-GET http://127.0.0.1:8000/apiDjangoBase/modelo/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/modelo/
 Max-Objects: 50
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/modelo/2524
+GET http://127.0.0.1:8000/apiDjangoRestFramework/modelo/2524
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/modelo/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/modelo/
 content-type: application/json
 
 {"nombre": "Cañonero",
@@ -109,7 +110,7 @@ content-type: application/json
 "tracciones": [46]}
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/modelo/2928/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/modelo/2928/
 content-type: application/json
 
 {"nombre": "Cañonero Long Wheel Base",
@@ -121,18 +122,18 @@ content-type: application/json
 "cajas_cambios": [1],
 "tracciones": [46]}
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/modelo/2912/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/modelo/2912/
 
 #################################################
 ################### Artículos ###################
 #################################################
-GET http://127.0.0.1:8000/apiDjangoBase/articulo/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/articulo/
 Max-Objects: 50
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/articulo/965
+GET http://127.0.0.1:8000/apiDjangoRestFramework/articulo/965
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/articulo/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/articulo/
 content-type: application/json
 
 {
@@ -145,7 +146,7 @@ content-type: application/json
 }
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/articulo/965/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/articulo/965/
 content-type: application/json
 
 {
@@ -158,40 +159,40 @@ content-type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/articulo/965/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/articulo/965/
 
 #########################################################
 ################### Tipos de vehículo ###################
 #########################################################
-GET http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/87
+GET http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/87
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/
 content-type: application/json
 
 {"nombre": "Camioneta"}
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/97/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/97/
 content-type: application/json
 
 {"nombre": "Camioneta descapotable"}
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/tipoVehiculo/97/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/97/
 
 #################################################
 ################### Versiones ###################
 #################################################
-GET http://127.0.0.1:8000/apiDjangoBase/version/
+GET http://127.0.0.1:8000/apiDjangoRestFramework/version/
 Max-Objects: 50
 
 ###
-GET http://127.0.0.1:8000/apiDjangoBase/version/4316
+GET http://127.0.0.1:8000/apiDjangoRestFramework/version/4316
 ###
-POST http://127.0.0.1:8000/apiDjangoBase/version/
+POST http://127.0.0.1:8000/apiDjangoRestFramework/version/
 content-type: application/json
 
 {
@@ -202,7 +203,7 @@ content-type: application/json
 }
 
 ###
-PUT http://127.0.0.1:8000/apiDjangoBase/version/5077/
+PUT http://127.0.0.1:8000/apiDjangoRestFramework/version/5077/
 content-type: application/json
 
 {
@@ -213,4 +214,4 @@ content-type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/apiDjangoBase/version/5077/
+DELETE http://127.0.0.1:8000/apiDjangoRestFramework/version/5077/
