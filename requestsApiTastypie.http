@@ -1,0 +1,216 @@
+### Para usar este archivo para realizar pruebas de peticiones a la API,
+### se necesita tener instalada la extensión REST Client del IDE Visual Studio Code
+
+################### Marcas ###################
+GET http://127.0.0.1:8000/apiTastypie/marca/
+
+###
+GET http://127.0.0.1:8000/apiTastypie/marca/6860
+###
+POST http://127.0.0.1:8000/apiTastypie/marca/
+content-type: application/json
+
+{"nombre": "Ejemplo", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/marca/6922/
+content-type: application/json
+
+{"nombre": "EjemploModificado", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/marca/6932/
+
+####################################################
+################### Combustibles ###################
+####################################################
+GET http://127.0.0.1:8000/apiTastypie/combustible/
+
+###
+GET http://127.0.0.1:8000/apiTastypie/combustible/1
+###
+POST http://127.0.0.1:8000/apiTastypie/combustible/
+content-type: application/json
+
+{"nombre": "Energía alternativa"}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/combustible/10/
+content-type: application/json
+
+{"nombre": "Energía más alternativa"}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/combustible/10/
+
+#######################################################
+################### Cajas de cambio ###################
+#######################################################
+GET http://127.0.0.1:8000/apiTastypie/cajacambios/
+
+###
+GET http://127.0.0.1:8000/apiTastypie/cajacambios/1
+###
+POST http://127.0.0.1:8000/apiTastypie/cajacambios/
+content-type: application/json
+
+{"nombre": "Nueva caja robotizada"}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/cajacambios/7/
+content-type: application/json
+
+{"nombre": "Nueva caja robotizada mejorada"}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/cajacambios/7/
+
+#########################################################
+################### Tipos de tracción ###################
+#########################################################
+GET http://127.0.0.1:8000/apiTastypie/traccion/
+
+###
+GET http://127.0.0.1:8000/apiTastypie/traccion/46
+###
+POST http://127.0.0.1:8000/apiTastypie/traccion/
+content-type: application/json
+
+{"nombre": "Tracción a las 6 ruedas"}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/traccion/50/
+content-type: application/json
+
+{"nombre": "Tracción a las 8 ruedas"}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/traccion/50/
+
+###############################################
+################### Modelos ###################
+###############################################
+GET http://127.0.0.1:8000/apiTastypie/modelo/
+Max-Objects: 50
+
+###
+GET http://127.0.0.1:8000/apiTastypie/modelo/2949
+###
+POST http://127.0.0.1:8000/apiTastypie/modelo/
+content-type: application/json
+
+{"nombre": "Cañonero",
+"precio": "20.000€",
+"longitud": "4,67m",
+"potencia": "150cv",
+"marca": "/apiTastypie/marca/6920/",
+"combustibles": ["/apiTastypie/combustible/1/","/apiTastypie/combustible/2/"],
+"cajas_cambios": ["/apiTastypie/cajacambios/1/"],
+"tracciones": ["/apiTastypie/traccion/46/"]}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/modelo/2954/
+content-type: application/json
+
+{"nombre": "Cañonero Long Wheel Base",
+"precio": "22.000€",
+"longitud": "4,67m",
+"potencia": "150cv",
+"marca": "/apiTastypie/marca/6920/",
+"combustibles": ["/apiTastypie/combustible/1/","/apiTastypie/combustible/2/"],
+"cajas_cambios": ["/apiTastypie/cajacambios/1/"],
+"tracciones": ["/apiTastypie/traccion/46/"]}
+###
+DELETE http://127.0.0.1:8000/apiTastypie/modelo/2954/
+
+#################################################
+################### Artículos ###################
+#################################################
+GET http://127.0.0.1:8000/apiTastypie/articulo/
+Max-Objects: 50
+
+###
+GET http://127.0.0.1:8000/apiTastypie/articulo/779
+###
+POST http://127.0.0.1:8000/apiTastypie/articulo/
+content-type: application/json
+
+{
+"titulo": "Nuevo artículo",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"fecha": "2020-05-07",
+"contenido": "Conetenido del nuevo artículo",
+"autor": "Autor del nuevo artículo",
+"modelo": "/apiTastypie/modelo/2524/"
+}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/articulo/967/
+content-type: application/json
+
+{
+"titulo": "Nuevo artículo modificado",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"fecha": "2020-05-08",
+"contenido": "Conetenido del nuevo artículo modificado",
+"autor": "Autor del nuevo artículo modificado",
+"modelo": "/apiTastypie/modelo/2524/"
+}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/articulo/967/
+
+#########################################################
+################### Tipos de vehículo ###################
+#########################################################
+GET http://127.0.0.1:8000/apiTastypie/tipovehiculo/
+
+###
+GET http://127.0.0.1:8000/apiTastypie/tipovehiculo/87
+###
+POST http://127.0.0.1:8000/apiTastypie/tipovehiculo/
+content-type: application/json
+
+{"nombre": "Camioneta"}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/tipovehiculo/98/
+content-type: application/json
+
+{"nombre": "Camioneta descapotable"}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/tipovehiculo/98/
+
+#################################################
+################### Versiones ###################
+#################################################
+GET http://127.0.0.1:8000/apiTastypie/version/
+Max-Objects: 50
+
+###
+GET http://127.0.0.1:8000/apiTastypie/version/4316
+###
+POST http://127.0.0.1:8000/apiTastypie/version/
+content-type: application/json
+
+{
+"nombre": "Nueva versión",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"tipo_vehiculo": "/apiTastypie/tipovehiculo/89/",
+"modelo": "/apiTastypie/modelo/2524/" 
+}
+
+###
+PUT http://127.0.0.1:8000/apiTastypie/version/5078/
+content-type: application/json
+
+{
+"nombre": "Nueva versión modificada",
+"url_foto": "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200507_0015/small.jpg",
+"tipo_vehiculo": "/apiTastypie/tipovehiculo/89/",
+"modelo": "/apiTastypie/modelo/2524/" 
+}
+
+###
+DELETE http://127.0.0.1:8000/apiTastypie/version/5078/

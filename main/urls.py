@@ -1,15 +1,29 @@
-from django import urls
 from django.conf.urls import url
 from django.urls import path, include
 from main import views
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
+from django.conf.urls import url, include
+from tastypie.api import Api
+from main.api.resources import *
 
 app_name = 'main'
 
 # Prefijos de los endpoint de cada API
 base_django_api_prefix = 'apiDjangoBase/'
 django_rest_framework_api_prefix = 'apiDjangoRestFramework/'
+tastypie_api_prefix = 'apiTastypie'
+
+# Registro de la API de Tastypie
+v1_api = Api(api_name=tastypie_api_prefix)
+v1_api.register(MarcaResource())
+v1_api.register(CombustibleResource())
+v1_api.register(CajaCambiosResource())
+v1_api.register(TraccionResource())
+v1_api.register(ModeloResource())
+v1_api.register(ArticuloResource())
+v1_api.register(TipoVehiculoResource())
+v1_api.register(VersionResource())
 
 # Registro de las entidades en el 'router' de Django REST framework
 router = routers.DefaultRouter()
@@ -27,7 +41,10 @@ router.register(r'tipoVehiculo', views.TipoVehiculoViewSet)
 router.register(r'version', views.VersionViewSet)
 
 urlpatterns = [
-    
+            
+    # Endpoints de la API desarrollada con Tastypie
+    url('', include(v1_api.urls)),
+
     # Endpoints de la API desarrollada con Django REST framework
     path(django_rest_framework_api_prefix, include(router.urls)),
     url(django_rest_framework_api_prefix+'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
