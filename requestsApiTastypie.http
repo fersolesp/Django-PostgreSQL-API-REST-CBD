@@ -1,103 +1,136 @@
 ### Para usar este archivo para realizar pruebas de peticiones a la API,
 ### se necesita tener instalada la extensión REST Client del IDE Visual Studio Code
 
+### Se debe rellenar usuario y contraseña para autenticar al usuario en las peticiones
+@username = fernando
+@password = password
+
+
 ################### Marcas ###################
-GET http://127.0.0.1:8000/apiTastypie/marca/
+GET http://127.0.0.1:8000/apiTastypie/marca
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/marca/6860
+Authorization: Basic {{username}}:{{password}}
+
 ###
-POST http://127.0.0.1:8000/apiTastypie/marca/
+POST http://127.0.0.1:8000/apiTastypie/marca/?api_key=898a8f40787e703803efa43455ae8fe2cea4d7d0&username=fernando
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Ejemplo", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
 
 ###
 PUT http://127.0.0.1:8000/apiTastypie/marca/6922/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "EjemploModificado", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/marca/6932/
+Authorization: Basic {{username}}:{{password}}
 
 ####################################################
 ################### Combustibles ###################
 ####################################################
 GET http://127.0.0.1:8000/apiTastypie/combustible/
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/combustible/1
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/combustible/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Energía alternativa"}
 
 ###
 PUT http://127.0.0.1:8000/apiTastypie/combustible/10/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Energía más alternativa"}
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/combustible/10/
+Authorization: Basic {{username}}:{{password}}
 
 #######################################################
 ################### Cajas de cambio ###################
 #######################################################
 GET http://127.0.0.1:8000/apiTastypie/cajacambios/
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/cajacambios/1
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/cajacambios/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Nueva caja robotizada"}
 
 ###
 PUT http://127.0.0.1:8000/apiTastypie/cajacambios/7/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Nueva caja robotizada mejorada"}
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/cajacambios/7/
+Authorization: Basic {{username}}:{{password}}
 
 #########################################################
 ################### Tipos de tracción ###################
 #########################################################
 GET http://127.0.0.1:8000/apiTastypie/traccion/
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/traccion/46
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/traccion/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Tracción a las 6 ruedas"}
 
 ###
 PUT http://127.0.0.1:8000/apiTastypie/traccion/50/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Tracción a las 8 ruedas"}
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/traccion/50/
+Authorization: Basic {{username}}:{{password}}
 
 ###############################################
 ################### Modelos ###################
 ###############################################
 GET http://127.0.0.1:8000/apiTastypie/modelo/
 Max-Objects: 50
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/modelo/2949
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/modelo/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Cañonero",
 "precio": "20.000€",
@@ -111,6 +144,7 @@ content-type: application/json
 ###
 PUT http://127.0.0.1:8000/apiTastypie/modelo/2954/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Cañonero Long Wheel Base",
 "precio": "22.000€",
@@ -122,18 +156,23 @@ content-type: application/json
 "tracciones": ["/apiTastypie/traccion/46/"]}
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/modelo/2954/
+Authorization: Basic {{username}}:{{password}}
 
 #################################################
 ################### Artículos ###################
 #################################################
 GET http://127.0.0.1:8000/apiTastypie/articulo/
 Max-Objects: 50
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/articulo/779
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/articulo/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {
 "titulo": "Nuevo artículo",
@@ -147,6 +186,7 @@ content-type: application/json
 ###
 PUT http://127.0.0.1:8000/apiTastypie/articulo/967/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {
 "titulo": "Nuevo artículo modificado",
@@ -159,40 +199,51 @@ content-type: application/json
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/articulo/967/
+Authorization: Basic {{username}}:{{password}}
 
 #########################################################
 ################### Tipos de vehículo ###################
 #########################################################
 GET http://127.0.0.1:8000/apiTastypie/tipovehiculo/
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/tipovehiculo/87
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/tipovehiculo/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Camioneta"}
 
 ###
 PUT http://127.0.0.1:8000/apiTastypie/tipovehiculo/98/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {"nombre": "Camioneta descapotable"}
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/tipovehiculo/98/
+Authorization: Basic {{username}}:{{password}}
 
 #################################################
 ################### Versiones ###################
 #################################################
 GET http://127.0.0.1:8000/apiTastypie/version/
 Max-Objects: 50
+Authorization: Basic {{username}}:{{password}}
 
 ###
 GET http://127.0.0.1:8000/apiTastypie/version/4316
+Authorization: Basic {{username}}:{{password}}
+
 ###
 POST http://127.0.0.1:8000/apiTastypie/version/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {
 "nombre": "Nueva versión",
@@ -204,6 +255,7 @@ content-type: application/json
 ###
 PUT http://127.0.0.1:8000/apiTastypie/version/5078/
 content-type: application/json
+Authorization: Basic {{username}}:{{password}}
 
 {
 "nombre": "Nueva versión modificada",
@@ -214,3 +266,4 @@ content-type: application/json
 
 ###
 DELETE http://127.0.0.1:8000/apiTastypie/version/5078/
+Authorization: Basic {{username}}:{{password}}

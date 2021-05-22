@@ -1,91 +1,127 @@
 ### Para usar este archivo para realizar pruebas de peticiones a la API,
 ### se necesita tener instalada la extensión REST Client del IDE Visual Studio Code
 
+
+## El token de autorización es efímero, debe iniciarse sesión con un usuario
+## registrado en la base de datos para obtenerlo:
+POST http://127.0.0.1:8000/apiDjangoRestFramework/api-token-auth/
+content-type: application/json
+
+{"username": "fernando", "password": "password"}
+
+## Registrar el token obtenido en la siguiente variable:
+@token = 37a0505998a930609bc62504cf4a0b11ffdbd366
+
+
 ################### Marcas ###################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/marca/
+Authorization: Token {{token}}
 
 ###
-GET http://127.0.0.1:8000/apiDjangoRestFramework/marca/6860
+GET http://127.0.0.1:8000/apiDjangoRestFramework/marca/6860/
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/marca/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Ejemplo2", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
 
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/marca/6924/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "EjemploModificado", "url_foto": "https://www.km77.com/img/brands/abarth.png?v=14"}
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/marca/6926/
+Authorization: Token {{token}}
 
 ####################################################
 ################### Combustibles ###################
 ####################################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/combustible/
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/combustible/1
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/combustible/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Energía alternativa"}
 
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/combustible/8/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Energía más alternativa"}
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/combustible/8/
+Authorization: Token {{token}}
 
 #######################################################
 ################### Cajas de cambio ###################
 #######################################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/1
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Nueva caja robotizada"}
 
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/4/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Nueva caja robotizada mejorada"}
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/cajaCambios/5/
+Authorization: Token {{token}}
 
 #########################################################
 ################### Tipos de tracción ###################
 #########################################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/traccion/
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/traccion/46
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/traccion/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Tracción a las 6 ruedas"}
 
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/traccion/49/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Tracción a las 8 ruedas"}
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/traccion/49/
+Authorization: Token {{token}}
 
 
 ###############################################
@@ -93,12 +129,16 @@ DELETE http://127.0.0.1:8000/apiDjangoRestFramework/traccion/49/
 ###############################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/modelo/
 Max-Objects: 50
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/modelo/2524
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/modelo/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Cañonero",
 "precio": "20.000€",
@@ -112,6 +152,7 @@ content-type: application/json
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/modelo/2928/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Cañonero Long Wheel Base",
 "precio": "22.000€",
@@ -123,17 +164,22 @@ content-type: application/json
 "tracciones": [46]}
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/modelo/2912/
+Authorization: Token {{token}}
 
 #################################################
 ################### Artículos ###################
 #################################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/articulo/
 Max-Objects: 50
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/articulo/965
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/articulo/
+Authorization: Token {{token}}
 content-type: application/json
 
 {
@@ -148,6 +194,7 @@ content-type: application/json
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/articulo/965/
 content-type: application/json
+Authorization: Token {{token}}
 
 {
 "titulo": "Nuevo artículo modificado",
@@ -160,40 +207,51 @@ content-type: application/json
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/articulo/965/
+Authorization: Token {{token}}
 
 #########################################################
 ################### Tipos de vehículo ###################
 #########################################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/87
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Camioneta"}
 
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/97/
 content-type: application/json
+Authorization: Token {{token}}
 
 {"nombre": "Camioneta descapotable"}
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/tipoVehiculo/97/
+Authorization: Token {{token}}
 
 #################################################
 ################### Versiones ###################
 #################################################
 GET http://127.0.0.1:8000/apiDjangoRestFramework/version/
 Max-Objects: 50
+Authorization: Token {{token}}
 
 ###
 GET http://127.0.0.1:8000/apiDjangoRestFramework/version/4316
+Authorization: Token {{token}}
+
 ###
 POST http://127.0.0.1:8000/apiDjangoRestFramework/version/
 content-type: application/json
+Authorization: Token {{token}}
 
 {
 "nombre": "Nueva versión",
@@ -205,6 +263,7 @@ content-type: application/json
 ###
 PUT http://127.0.0.1:8000/apiDjangoRestFramework/version/5077/
 content-type: application/json
+Authorization: Token {{token}}
 
 {
 "nombre": "Nueva versión modificada",
@@ -215,3 +274,4 @@ content-type: application/json
 
 ###
 DELETE http://127.0.0.1:8000/apiDjangoRestFramework/version/5077/
+Authorization: Token {{token}}

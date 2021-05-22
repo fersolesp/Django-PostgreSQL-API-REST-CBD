@@ -9,28 +9,28 @@ class MarcaResource(ModelResource):
     class Meta:
         queryset = Marca.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class CombustibleResource(ModelResource):
     class Meta:
         queryset = Combustible.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class CajaCambiosResource(ModelResource):
     class Meta:
         queryset = CajaCambios.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class TraccionResource(ModelResource):
     class Meta:
         queryset = Traccion.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class ModeloResource(ModelResource):
@@ -42,7 +42,7 @@ class ModeloResource(ModelResource):
     class Meta:
         queryset = Modelo.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class ArticuloResource(ModelResource):
@@ -50,14 +50,14 @@ class ArticuloResource(ModelResource):
     class Meta:
         queryset = Articulo.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class TipoVehiculoResource(ModelResource):
     class Meta:
         queryset = TipoVehiculo.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
 
 class VersionResource(ModelResource):
@@ -67,5 +67,5 @@ class VersionResource(ModelResource):
     class Meta:
         queryset = Version.objects.all()
         allowed_methods = ['get','post','put','delete']
-        authentication = Authentication()
+        authentication = BasicAuthentication()
         authorization = Authorization()
